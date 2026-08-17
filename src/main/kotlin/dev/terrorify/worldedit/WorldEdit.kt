@@ -81,7 +81,7 @@ object WorldEdit {
         val cm = MinecraftServer.getCommandManager()
 
         // //wand
-        val wand = Command("/wand")
+        val wand = Command("/wand", "wand")
         wand.setCondition { sender, commandString ->
             if (commandString != null) return@setCondition true
             if (sender is Player) hasPermission(sender) else true
@@ -96,7 +96,7 @@ object WorldEdit {
         cm.register(wand)
 
         // //pos1
-        val pos1 = Command("/pos1")
+        val pos1 = Command("/pos1", "pos1")
         pos1.setCondition { sender, commandString ->
             if (commandString != null) return@setCondition true
             if (sender is Player) hasPermission(sender) else true
@@ -110,7 +110,7 @@ object WorldEdit {
         cm.register(pos1)
 
         // //pos2
-        val pos2 = Command("/pos2")
+        val pos2 = Command("/pos2", "pos2")
         pos2.setCondition { sender, commandString ->
             if (commandString != null) return@setCondition true
             if (sender is Player) hasPermission(sender) else true
@@ -124,7 +124,7 @@ object WorldEdit {
         cm.register(pos2)
 
         // //copy
-        val copy = Command("/copy")
+        val copy = Command("/copy", "copy")
         copy.setCondition { sender, commandString ->
             if (commandString != null) return@setCondition true
             if (sender is Player) hasPermission(sender) else true
@@ -145,7 +145,7 @@ object WorldEdit {
         cm.register(copy)
 
         // //paste
-        val paste = Command("/paste")
+        val paste = Command("/paste", "paste")
         paste.setCondition { sender, commandString ->
             if (commandString != null) return@setCondition true
             if (sender is Player) hasPermission(sender) else true
@@ -182,7 +182,7 @@ object WorldEdit {
         cm.register(replaceCommand())
 
         // //undo
-        val undo = Command("/undo")
+        val undo = Command("/undo", "undo")
         undo.setCondition { sender, commandString ->
             if (commandString != null) return@setCondition true
             if (sender is Player) hasPermission(sender) else true
@@ -202,7 +202,7 @@ object WorldEdit {
         cm.register(undo)
 
         // //redo
-        val redo = Command("/redo")
+        val redo = Command("/redo", "redo")
         redo.setCondition { sender, commandString ->
             if (commandString != null) return@setCondition true
             if (sender is Player) hasPermission(sender) else true
@@ -229,7 +229,7 @@ object WorldEdit {
     }
 
     private fun setCommand(): Command {
-        val command = Command("/set")
+        val command = Command("/set", "set")
         command.setCondition { sender, commandString ->
             if (commandString != null) return@setCondition true
             if (sender is Player) hasPermission(sender) else true
@@ -297,7 +297,7 @@ object WorldEdit {
     }
 
     private fun replaceCommand(): Command {
-        val command = Command("/replace")
+        val command = Command("/replace", "replace")
         command.setCondition { sender, commandString ->
             if (commandString != null) return@setCondition true
             if (sender is Player) hasPermission(sender) else true
@@ -414,7 +414,7 @@ object WorldEdit {
 
     // ── //up <n> [block] ──────────────────────────────────────────────────────────────────────
     private fun upCommand(): Command {
-        val command = Command("/up")
+        val command = Command("/up", "up")
         command.setCondition { sender, commandString ->
             if (commandString != null) return@setCondition true
             if (sender is Player) hasPermission(sender) else true

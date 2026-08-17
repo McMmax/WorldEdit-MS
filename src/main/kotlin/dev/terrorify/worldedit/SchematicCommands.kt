@@ -21,7 +21,7 @@ object SchematicCommands {
     private val EXTENSIONS = listOf("schem", "schematic", "nbt", "litematic", "bp")
 
     fun register() {
-        val command = Command("/schem")
+        val command = Command("/schem", "schem")
         command.setCondition { sender, commandString ->
             if (commandString != null) return@setCondition true
             if (sender is Player) WorldEdit.hasPermission(sender) else true
