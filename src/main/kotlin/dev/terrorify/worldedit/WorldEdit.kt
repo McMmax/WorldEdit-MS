@@ -379,7 +379,7 @@ object WorldEdit {
                     val match = if (fromBlock != null) {
                         oldBlock.id() == fromBlock.id()
                     } else {
-                        !oldBlock.isAir
+                        !oldBlock.air()
                     }
 
                     if (match) {
@@ -477,7 +477,7 @@ object WorldEdit {
         val instance = player.instance
         if (instance != null) {
             for (point in player.getLineOfSight(64)) {
-                if (!instance.getBlock(point).isAir) return point
+                if (!instance.getBlock(point).air()) return point
             }
         }
         return player.position

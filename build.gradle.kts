@@ -12,7 +12,7 @@ repositories {
 
 dependencies {
     // Minestom core supplied by the consuming app at runtime (like modules/svc).
-    compileOnly(rootProject)
+    compileOnly(project(":"))
     compileOnly(project(":spacetime"))
     compileOnly(project(":polar"))
     compileOnly(project(":solar"))
